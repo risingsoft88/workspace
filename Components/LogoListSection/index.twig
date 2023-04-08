@@ -1,0 +1,19 @@
+<section class="logo-list-section">
+    <div class="logo-list-row logo-list-row-desktop">
+        <div class="logo-list-item logo-list-item-title">{{ section_title|e('wp_kses_post') }}</div>
+        {% for logo in logo_setting.desktop.logos %}
+            <div class="logo-list-item">
+                <img class="lazyload" data-src="{{ logo.image|resizeDynamic(logo.image.width) }}" alt="{{ logo.image.alt|e }}" style="max-width: {{ logo.width }}px">
+            </div> 
+        {% endfor %}
+    </div>
+    <div class="logo-list-row logo-list-row-mobile">
+        <div class="logo-list-item logo-list-item-title">{{ section_title|e('wp_kses_post') }}</div>
+        {% for logo in logo_setting.mobile.logos %}
+            {% if logo.line_break %}<div class="logo-list-item-mobile-line-break"></div>{% endif %}
+            <div class="logo-list-item">
+                <img class="lazyload" data-src="{{ logo.image|resizeDynamic(logo.image.width) }}" alt="{{ logo.image.alt|e }}" style="max-width: {{ logo.width }}px">
+            </div> 
+        {% endfor %}
+    </div>
+</section>

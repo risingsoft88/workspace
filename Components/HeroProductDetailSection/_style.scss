@@ -1,0 +1,40 @@
+.hero-product-detail-section {
+  @include gradient-y($color-very-light-gray, $color-white);
+  background-color: $color-very-light-gray;
+  overflow: hidden;
+  padding: 83px 0 56px;
+}
+
+.hero-product-detail-content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-product-detail-img {
+  margin-top: 46px;
+  text-align: center;
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+@media (max-width : $tablet-break-point) {
+  .hero-product-detail-section {
+    padding: 60px 0 40px;
+
+    .container {
+      padding: 0 30px;
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .hero-product-detail-section {
+    padding: 32px 0 0;
+  }
+
+  .hero-product-detail-img {
+    margin-top: 28px;
+  }
+}

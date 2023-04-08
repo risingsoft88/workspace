@@ -1,0 +1,7 @@
+<section class="hero-text-background-section" style="background-image: url('{{ image.src|resizeDynamic(2000) }}')">
+    <div class="container">
+        <div class="content-col">
+            {{ content|e('wp_kses_post') }}
+        </div>
+    </div>
+</section>

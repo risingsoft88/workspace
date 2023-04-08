@@ -1,0 +1,19 @@
+<section class="post-one-col-section">
+    <div class="container">
+        <a href="{% if selected_post.landing_page_type == 'read-article' %} {{ selected_post.link }} {% else %} {{ selected_post.landing_page_link }} {% endif %}">
+            <div class="post-one-col-inner">
+                <div class="post-one-col-img" style="background-image: url('{{ selected_post.thumbnail.src|resizeDynamic(600, selected_post.thumbnail.height / selected_post.thumbnail.width * 600) }}');"></div>
+                <div class="post-one-col-content">
+                    <div class="post-one-col-info">
+                        <h3>{{ selected_post.post_title|e }}</h3>
+                        <p>{{ selected_post.post_excerpt|e }}</p>
+                    </div>
+                    <div class="post-one-col-link">
+                        <p class="global-link"> {{ selected_post.field_object('landing_page_type').choices[selected_post.landing_page_type] }}</p>
+                        <span class="post-one-col-icon post-view-link-icon-{{ selected_post.landing_page_type }}"></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

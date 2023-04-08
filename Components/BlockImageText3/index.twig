@@ -1,0 +1,40 @@
+<section class="block-image-text-3-section {% if gray_background_color %} gray-background-color {% endif %} {{ section_padding }}">
+    <div class="container">
+        <div class="block-image-text-3-row">
+            {% if image or retina_image %}
+                <div class="image-col">
+                    <div class="image-col-inner">
+                        {% if retina_image %}
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(image.width, image.height) }}"
+                                data-src="{{ image.src|resizeDynamic(image.width) }}"
+                                data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                                data-sizes="auto"
+                                alt="{{ image.alt|e }}"
+                            >
+                        {% else %}
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(image.width, image.height) }}"
+                                data-src="{{ image.src|resizeDynamic(image.width) }}"
+                                alt="{{ image.alt|e }}"
+                            >
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="content-col">
+                    {{ content|e('wp_kses_post') }}
+                </div>
+            {% else %}
+
+                <div class="content-col no-image">
+                    {{ content|e('wp_kses_post') }}
+                </div>
+
+            {% endif %}
+               
+        </div>
+    </div>
+</section>

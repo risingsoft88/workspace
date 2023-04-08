@@ -1,0 +1,161 @@
+.blue-content-section {
+  padding: 80px 0;
+  text-align: center;
+    
+  .container {
+    background-color: $color-blue;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 70px 0;
+    position: relative;
+
+    .blue-content-mask-1,
+    .blue-content-mask-2,
+    &::before,
+    &::after {
+      background-color: $color-light-blue;
+      content: '';
+      height: 462.96px;
+      opacity: 0.15;
+      position: absolute;
+      transform: rotate(-45deg);
+      width: 182.94px;
+    }
+
+    .blue-content-mask-1 {
+      left: -200px;
+      top: -271px;
+    }
+
+    .blue-content-mask-2 {
+      left: 100px;
+      top: -321px;
+    }
+
+    &::before {
+      bottom: -252px;
+      right: -197px;
+    }
+
+    &::after {
+      bottom: -299px;
+      right: 103px;
+    }
+  }
+    
+  h2 {
+    color: $color-white;
+    font-size: 46px;
+  }
+    
+  p {
+    color: $color-white;
+    font-size: 24px;
+    margin-top: 12px;
+  }
+}
+
+.blue-content-link {
+  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+
+  a {
+    background-color: $color-dark-white;
+    border-radius: 3px;
+    color: $color-blue;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: $font-weight-medium;
+    padding: 19px 45px;
+    transition: background-color 0.2s linear, color 0.2s linear;
+
+    &:hover {
+      background-color: $color-dark-blue;
+      color: $color-dark-white;
+    }
+  }
+}
+
+@media #{$tablet-query} {
+  .blue-content-section {
+    padding: 54px 25px;
+
+    .container {
+      padding: 50px 0;
+    }
+
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  
+  .blue-content-link {
+    a {
+      font-size: 16px;
+      padding: 14px 30px;
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .blue-content-section {
+    padding: 40px 0;
+    
+    .container {
+      padding: 56px 30px;
+
+      .blue-content-mask-1,
+      .blue-content-mask-2,
+      &::before,
+      &::after {
+        height: 231px;
+        width: 91px;
+      }
+
+      .blue-content-mask-1 {
+        left: -80px;
+        top: -127px;
+      }
+
+      .blue-content-mask-2 {
+        left: 70px;
+        top: -152px;
+      }
+
+      &::before {
+        bottom: -130px;
+        right: -77px;
+      }
+
+      &::after {
+        bottom: -153px;
+        right: 73px;
+      }
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-top: 14px;
+    }
+  }
+
+  .blue-content-link {
+    margin-top: 19px;
+
+    a {
+      font-size: 16px;
+      padding: 14px 30px;
+    }
+  }
+}

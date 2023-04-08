@@ -1,0 +1,117 @@
+<div class="post-header">
+    <div class="post-container">
+        <div class="post-header-row">
+            <div class="post-header-left">
+                <div class="post-date">{{ post.date }}</div>
+                <div class="post-title">
+                    <h1>{{ post.post_title }}</h1>
+                </div>
+                <div class="post-category-container">
+                    {% if post.categories is not empty %}
+                        {% for cat in post.categories %}
+                            <a class="post-category" href="/blog?category={{ cat.link|split(site.url ~ '/blog/category/')[1] }}">{{ cat }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="post-author-row">
+                    {% if user_avatar_url is not empty %}
+                        <div class="post-author-avatar">
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(95, 95) }}"
+                                data-src="{{ user_avatar_url }}"
+                                alt="{{ post.author.first_name }} {{ post.author.last_name }}"
+                            >
+                        </div>
+                    {% endif %}
+                    <div class="post-author-name"><a>{{ post.author.first_name }} {{ post.author.last_name }}</a></div>
+                    <div class="post-author-links"><a href="{{ post_author_url }}" target="_blank"><span class="linkedin-icon"></span></a></div>
+                </div>
+            </div>
+            <div class="post-header-right">
+                <div class="post-header-right-background" style="background-image: url({{ post.thumbnail.src|resizeDynamic(post.thumbnail.width) }})"></div>
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(550, post.thumbnail.height / post.thumbnail.width * 550) }}"
+                    data-src="{{ post.thumbnail.src|resizeDynamic(550) }}"
+                    data-srcset="{{ post.thumbnail.src|resizeDynamic(550) }} 1x, {{ post.thumbnail.src|resizeDynamic(1100) }} 2x"
+                    data-sizes="auto"
+                    alt="{{ post.thumbnail.alt|e }}"
+                >
+                <span class="post-one-col-icon post-view-link-icon-{{ post.landing_page_type }}"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="post-content">
+    <div class="post-container">{{ post.content }}</div>
+</div>
+
+<div class="post-share-buttons">
+    <div class="post-container sharer-container">
+        <h2>Share this article</h2>
+
+        <div class="share-buttons">
+            <a class="button button--facebook" href="https://www.facebook.com/sharer/sharer.php?u=">
+                <span></span>
+                <p>| Facebook</p>
+            </a>
+            <a class="button button--twitter" href="http://www.twitter.com/share?url=">
+                <span></span>
+                <p>| Twitter</p>
+            </a>
+            <a class="button button--linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=">
+                <span></span>
+                <p>| LinkedIn</p>
+            </a>
+
+        </div>
+    
+    </div>
+
+</div>
+
+<div class="post-author-card">
+    <div class="post-container author-card">
+        <div class="author-info-container">
+            <div class="author-image">
+                {% if user_avatar_url is not empty %}
+                    <div class="post-author-avatar">
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(115, 115) }}"
+                            data-src="{{ user_avatar_url }}"
+                            alt="{{ post.author.first_name }} {{ post.author.last_name }} Avatar"
+                        >
+                    </div>
+                {% endif %}
+            </div>
+            <div class="author-name">
+                <h2>{{ post.author.first_name }} {{ post.author.last_name }}</h2>
+                <h5>About the Author</h5>
+            </div>
+        </div>
+        <div class="author-bio">
+            <p>{{ post.author.description }}</p>
+        </div>
+    </div>
+</div>
+
+<section class="related-posts-section">
+    <div class="post-container container">
+        <h2>Related Posts</h2>
+        <div id="related-posts-row" class="related-posts-row" data-current-post-id="{{ current_post_id }}">
+            <!-- The content -->
+            <div class="related-posts-col">Loading Blog...</div>
+        </div>
+        <div id="related-posts-navigation" class="related-posts-navigation" data-cat={{ cat }} data-posts-per-page="{{ posts_per_page }}"  data-current-post-id="{{ current_post_id }}" data-nonce="{{ nonce }}">{{ page_nav_html }}</div>
+        <div id="related-posts-load-more-btn-row" class="related-posts-load-more-btn-row">{{ load_more_btn }}</div>
+    </div>
+</section>
+
+<div class="post-comments">
+    <div class="post-container">
+        {{ function('comments_template') }}
+    </div>
+</div>
+{# {{ renderComponent('PostOneColumnSection', {'selected_post': footer_post}) }} #}

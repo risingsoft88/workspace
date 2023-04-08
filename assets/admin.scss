@@ -1,0 +1,17 @@
+@import
+  'styles/variables',
+  'styles/mixins';
+
+// stylelint-disable-next-line scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
+@import '../Components/**/_admin.scss';
+
+
+// Hide "Custom Fields" menu  item
+#toplevel_page_edit-post_type-acf-field-group {
+  display: none;
+}
+
+// Hide plugin update notices
+.plugin-update {
+  display: none;
+}

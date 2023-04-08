@@ -1,0 +1,46 @@
+<section class="block-image-text-2-section {% if gray_background_color %}gray-background-color{% endif %}">
+    <div class="container">
+        <div class="block-image-text-2-row {% if row_reverse %} row-reverse {% endif %}">
+            <div class="image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload {% if image_shadow %} image-shadow {% else %} image-shadow-none {% endif %}"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload {% if image_shadow %} image-shadow {% else %} image-shadow-none {% endif %}"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+            <div class="content-col">
+                {% if content_icon %}
+                    <div class="content-icon">
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(content_icon.width, content_icon.height) }}"
+                            data-src="{{ content_icon.src|resizeDynamic(content_icon.width) }}"
+                            alt="{{ content_icon.alt|e }}"
+                            style="width:{{ content_icon.width / 2 }}px"
+                        >
+                    </div>
+                {% endif %}
+                <div class="content-col-inner">
+                    {{ content|e('wp_kses_post') }}
+                    {% if link_title %}
+                        <div class="block-link">
+                            <a class="global-link" href="{{ link_url }}" {% if new_tab %}target="_blank"{% endif %}>{{ link_title }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

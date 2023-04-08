@@ -1,0 +1,10 @@
+<section class="blue-content-form-section">
+    <div class="container">
+        <div class="blue-content-form-mask-1"></div>
+        <div class="blue-content-form-mask-2"></div>
+        {{ content|e('wp_kses_post') }}
+        <div class="global-subscribe-form">
+            {{ gravity_grom_shortcode|shortcodes }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+.hero-text-background-section {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 145px 0 141px;
+
+  h1 {
+    color: $color-white;
+  }
+}
+
+@media (max-width : 1200px) {
+  .hero-text-background-section {
+    padding: 75px 0 69px;
+  }
+}
+
+@media (max-width : 1000px) {
+  .hero-text-background-section {
+    padding: 65px 0 61px;
+  }
+}

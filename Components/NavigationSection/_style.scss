@@ -1,0 +1,105 @@
+.navigation-section {
+  .container {
+    position: relative;
+
+    &::after {
+      background-color: $color-light-gray;
+      bottom: -1px;
+      content: '';
+      height: 1px;
+      left: -85px;
+      position: absolute;
+      right: -105px;
+    }
+  }
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 17px 0 22px;
+}
+
+.navigation-item {
+  color: $color-blue;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  line-height: 28px;
+  position: relative;
+
+  @media (min-width : $mobile-break-point) {
+    &::after {
+      background-color: $color-blue;
+      bottom: -23px;
+      content: '';
+      height: 3px;
+      left: 0;
+      position: absolute;
+      right: 100%;
+      transition: right 0.3s linear;
+      z-index: 1;
+    }
+
+    &.active,
+    &:hover {
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width : 1650px) {
+  .navigation-section {
+    .container {
+      &::after {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width : $tablet-break-point) {
+  .navigation-item {
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .navigation-section {
+    .container {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .navigation-list {
+    display: block;
+    padding: 26px 0 30px;
+  }
+
+  .navigation-item {
+    padding: 11px 31px 9px;
+    position: relative;
+
+    &::after {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMzA0LjYgMzkyLjYgMTIuMSA2LjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTMwNC42IDM5Mi42IDEyLjEgNi45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0QwRTBGMiIgZD0iTS0zMDQuNSwzOTMuN2w1LjcsNS43YzAuMSwwLjEsMC4zLDAuMSwwLjUsMGw1LjctNS43YzAuMS0wLjEsMC4xLTAuMywwLTAuNWwtMC41LTAuNWMtMC4xLTAuMS0wLjMtMC4xLTAuNSwwbC01LDQuOWwtNS00LjljLTAuMS0wLjEtMC4zLTAuMS0wLjUsMGwtMC41LDAuNUMtMzA0LjYsMzkzLjQtMzA0LjYsMzkzLjYtMzA0LjUsMzkzLjd6Ii8+PC9zdmc+');
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 7px;
+      left: 0;
+      position: absolute;
+      top: 18px;
+      width: 11px;
+    }
+  }
+
+  .navigation-item+.navigation-item {
+    border-top: 1px solid $color-light-gray;
+  }
+}

@@ -1,0 +1,132 @@
+.block-image-text-4-section {
+  margin-bottom: 170px;
+  overflow: hidden;
+}
+
+.block-image-text-4-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .content-col {
+    width: 43.16547%;
+
+    h2 {
+      color: $color-light-black;
+      font-size: 28px;
+      font-weight: $font-weight-normal;
+      line-height: 38px;
+      padding-bottom: 22px;
+      position: relative;
+
+      &::after {
+        background-color: $color-blue;
+        bottom: 0;
+        content: '';
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 30px;
+      }
+    }
+    
+    p {
+      color: $color-dark-gray;
+      font-size: 20px;
+      font-weight: $font-weight-normal;
+      line-height: 30px;
+      margin-top: 22px;
+
+      a {
+        color: $color-blue;
+      }
+    }
+  }
+  
+  .image-col {
+    @include clearfix();
+    width: 48.20144%;
+
+    img {
+      border-radius: 4px;
+      float: left;
+      max-width: none;
+    }
+  }
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+
+    .image-col {
+      img {
+        float: right;
+      }
+    }
+  }
+}
+
+@media #{$tablet-query} {
+  .block-image-text-4-section {
+    margin-bottom: 100px;
+  }
+
+  .block-image-text-4-row {
+    .content-col {
+      width: 39.78495%;
+
+      h2 {
+        font-size: 22px;
+        line-height: 32px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    .image-col {
+      width: 51.6129%;
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .block-image-text-4-section {
+    margin-bottom: 61px;
+  }
+  
+  .block-image-text-4-row {
+    display: block;
+  
+    .content-col {
+      width: 100%;
+  
+      h2 {
+        font-size: 20px;
+        line-height: 28px;
+        padding-bottom: 21px;
+  
+        &::after {
+          height: 2px;
+          width: 27px;
+        }
+      }
+      
+      p {
+        font-size: 15px;
+        line-height: 23px;
+        margin-top: 21px;
+      }
+    }
+    
+    .image-col {
+      margin-top: 29px;
+      width: 100%;
+  
+      img {
+        width: 500px;
+      }
+    }
+  }
+}

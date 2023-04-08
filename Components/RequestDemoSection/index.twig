@@ -1,0 +1,85 @@
+<section class="request-demo-section" {% if background_image %} style="background-image: url('{{ background_image.src|resizeDynamic(background_image.width) }}');" {% endif %}>
+    {% if is_hero %}
+        <div class="request-demo-img-elem-desktop request-demo-img-elem-desktop-1" data-bottom="220" style="right:-363px;bottom:220px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image_1.width / 2, background_element_image_1.height / 2) }}"
+                data-src="{{ background_element_image_1.src|resizeDynamic(background_element_image_1.width / 2, background_element_image_1.height / 2) }}"
+                data-srcset="{{ background_element_image_1.src|resizeDynamic(background_element_image_1.width / 2, background_element_image_1.height / 2) }} 1x, {{ background_element_image_1.src|resizeDynamic(background_element_image_1.width, background_element_image_1.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+        <div class="request-demo-img-elem-desktop request-demo-img-elem-desktop-2" data-bottom="-268" style="right:-472px;bottom:-268px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image_2.width / 2, background_element_image_2.height / 2) }}"
+                data-src="{{ background_element_image_2.src|resizeDynamic(background_element_image_2.width / 2, background_element_image_2.height / 2) }}"
+                data-srcset="{{ background_element_image_2.src|resizeDynamic(background_element_image_2.width / 2, background_element_image_2.height / 2) }} 1x, {{ background_element_image_2.src|resizeDynamic(background_element_image_2.width, background_element_image_2.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+        <div class="request-demo-img-elem-desktop request-demo-img-elem-desktop-3" data-bottom="-525" style="right:-80px;bottom:-525px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image_3.width / 2, background_element_image_3.height / 2) }}"
+                data-src="{{ background_element_image_3.src|resizeDynamic(background_element_image_3.width / 2, background_element_image_3.height / 2) }}"
+                data-srcset="{{ background_element_image_3.src|resizeDynamic(background_element_image_3.width / 2, background_element_image_3.height / 2) }} 1x, {{ background_element_image_3.src|resizeDynamic(background_element_image_3.width, background_element_image_3.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+        <div class="request-demo-img-elem-mobile request-demo-img-elem-mobile-1" style="right:-280px;bottom:-81px;width:450px;height:259px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(450, 259) }}"
+                data-src="{{ background_element_image_1.src|resizeDynamic(450, 259) }}"
+                data-srcset="{{ background_element_image_1.src|resizeDynamic(450, 259) }} 1x, {{ background_element_image_1.src|resizeDynamic(900, 518) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+        <div class="request-demo-img-elem-mobile request-demo-img-elem-mobile-2" style="bottom:-84px;right:44px;width:405px;height:221px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(405, 221) }}"
+                data-src="{{ background_element_image_2.src|resizeDynamic(405, 221) }}"
+                data-srcset="{{ background_element_image_2.src|resizeDynamic(405, 221) }} 1x, {{ background_element_image_2.src|resizeDynamic(810, 442) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+        <div class="request-demo-img-elem-mobile request-demo-img-elem-mobile-3" style="bottom:-114px;right:258px;width:405px;height:253px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(405, 253) }}"
+                data-src="{{ background_element_image_3.src|resizeDynamic(405, 253) }}"
+                data-srcset="{{ background_element_image_3.src|resizeDynamic(405, 253) }} 1x, {{ background_element_image_3.src|resizeDynamic(810, 506) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="request-demo-content {% if align_center %} align-center {% endif %}">
+            {{ content|e('wp_kses_post') }}
+        </div>
+        <div class="request-demo-form global-subscribe-form {% if align_center %} align-center {% endif %}">
+            {{ gravity_grom_shortcode|shortcodes }}
+        </div>
+        {% if video_url %}
+            <div class="request-demo-video-link">
+                <a href="#" rel="nofollow">Watch Video</a>
+            </div>
+            <div class="youtube-video-dialog" style="display: none">
+                <div class="youtube-video-dialog-inner">   
+                    <div class="youtube-video-dialog-close-btn"></div>
+                    <div class="video-responsive" data-video-url="{{ video_url|e('esc_url') }}">   
+                        <iframe width="560" height="315" src="{{ video_url|e('esc_url') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>

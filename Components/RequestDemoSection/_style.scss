@@ -1,0 +1,222 @@
+.request-demo-section {
+  background-color: $color-very-light-gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding: 145px 0;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.request-demo-img-elem-desktop {
+  position: absolute;
+  z-index: 0;
+}
+
+.request-demo-img-elem-mobile {
+  display: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.request-demo-content {
+  max-width: 750px;
+
+  &.align-center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    color: $color-light-black;
+    font-size: 62px;
+    line-height: 70px;
+  }
+
+  p {
+    color: $color-light-black;
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 27px;
+  }
+}
+
+.request-demo-form {
+  margin-top: 38px;
+
+  &.align-center {
+    .gform_wrapper {
+      margin: 0 auto;
+    }
+  }
+
+  .form-sentence {
+    color: $color-light-black;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
+
+.request-demo-video-link {
+  margin-top: 40px;
+
+  a {
+    @include global-hover-effect();
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItNDEgMTQ5IDQ5NiA0OTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTQxIDE0OSA0OTYgNDk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iIzE1NjVDMCIgZD0iTTIwNywxNDlDNzAsMTQ5LTQxLDI2MC00MSwzOTdTNzAsNjQ1LDIwNyw2NDVzMjQ4LTExMSwyNDgtMjQ4UzM0NCwxNDksMjA3LDE0OXogTTMyMi43LDQyMWwtMTc2LDEwMSBjLTE1LjgsOC44LTM1LjctMi41LTM1LjctMjFWMjkzYzAtMTguNCwxOS44LTI5LjgsMzUuNy0yMWwxNzYsMTA3QzMzOS4xLDM4OC4yLDMzOS4xLDQxMS45LDMyMi43LDQyMXoiLz48L3N2Zz4=');
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    color: $color-blue;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    padding-left: 23px;
+  }
+}
+
+.youtube-video-dialog {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.youtube-video-dialog-inner {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.17);
+  padding: 53px 25px 25px;
+  position: relative;
+  width: 794px;
+
+  .youtube-video-dialog-close-btn {
+    cursor: pointer;
+    height: 15px;
+    position: absolute;
+    right: 19px;
+    top: 17px;
+    width: 15px;
+
+    &::before,
+    &::after {
+      background-color: #252525;
+      content: '';
+      height: 2px;
+      left: -2px;
+      position: absolute;
+      top: 6px;
+      width: 23px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .video-responsive {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }  
+  }
+}
+
+@media #{$tablet-query} {
+  .request-demo-section {
+    padding: 56px 0 111px;
+  }
+
+  .request-demo-content {
+    max-width: 560px;
+      
+    h2 {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  .request-demo-form {
+    margin-top: 41px;
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .request-demo-section {
+    padding: 33px 0 49px;
+    text-align: center;
+  }
+
+  .request-demo-img-elem-desktop {
+    display: none;
+  }
+
+  .request-demo-img-elem-mobile {
+    display: block;
+  }
+
+  .request-demo-content {
+    max-width: 100%;
+
+    h2 {
+      font-size: 30px;
+      line-height: 38px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 26px;
+      margin-top: 11px;
+    }
+  }
+
+  .request-demo-form {
+    margin: 13px auto 0;
+    max-width: 320px;
+  }
+  
+  .request-demo-video-link {
+    margin-top: 23px;
+
+    a {
+      background-size: 16px 16px;
+      font-size: 16px;
+      padding-left: 20px;
+    }
+  }
+
+  .youtube-video-dialog {
+    padding: 0 20px;
+  }
+  
+  .youtube-video-dialog-inner {
+    padding: 53px 20px 20px;
+    width: 100%;
+  }
+}

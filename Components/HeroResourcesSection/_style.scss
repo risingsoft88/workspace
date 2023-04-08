@@ -1,0 +1,35 @@
+.hero-resources-section {
+  background-color: $color-very-light-gray;
+  overflow: hidden;
+  padding: 110px 0 104px;
+  position: relative;
+}
+
+.hero-resources-img-elem-desktop {
+  position: absolute;
+}
+
+.hero-resources-content {
+  max-width: 430px;
+  position: relative;
+  z-index: 1;
+
+  p {
+    color: $color-light-black;
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .hero-resources-section {
+    padding: 33px 0;
+  }
+
+  .hero-resources-content {
+    p {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<section class="empty-section">
+
+    <span class="desktop"  style="height: {{ desktop_height }};"></span>
+
+    <span class="mobile"  style="height: {% if mobile_height %} {{ mobile_height }} {% else %} {{ desktop_height }} {% endif %}" ></span>
+
+</section>

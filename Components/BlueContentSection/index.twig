@@ -1,0 +1,10 @@
+<section class="blue-content-section">
+    <div class="container">
+        <div class="blue-content-mask-1"></div>
+        <div class="blue-content-mask-2"></div>
+        {{ content|e('wp_kses_post') }}
+        <div class="blue-content-link">
+            <a href="{{ link_url }}">{{ link_title }}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+.all-podcast-section {
+  margin-bottom: 156px;
+  padding: 60px 0 0;
+}
+
+@media (max-width : $mobile-break-point) {
+  .all-podcast-section {
+    margin-bottom: 0;
+    padding: 19px 0 60px;
+  }
+}

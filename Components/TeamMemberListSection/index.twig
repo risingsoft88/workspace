@@ -1,0 +1,74 @@
+<section class="team-member-list-section">
+    <div class="container">
+        <div class="team-member-list-cat">
+            <h2>{{ leadership_list_title }}</h2> 
+            <h4>{{ leadership_list_subtitle }}</h4>
+        </div>
+        <div class="team-member-list-row">
+            {% for item in leadership_team %}   
+                <div class="team-member-list-item">
+                    <div class="team-member-list-item-inner">
+                        <div class="team-member-list-item-avatar">
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(350, 350) }}"
+                                data-src="{{ item.team_member.meta('avatar').src|resizeDynamic(350, 350) }}"
+                                alt="{{ item.team_member.meta('avatar').alt|e }}"
+                            >
+                        </div>
+                        <div class="team-member-list-item-link">
+                            <div class="team-member-list-item-link-btn">
+                                <a href="{{ item.team_member.link }}">View Bio</a>
+                            </div>
+                        </div>
+                        <div class="team-member-list-item-info">
+                            <h3>{{ item.team_member.title }} <a href="{{ item.team_member.linkedin_url }}" target="_blank"><span class="linkedin-white-icon"></span></a></h3>
+                            <p>{{ item.team_member.role }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                No Team Members have been found.
+            {% endfor %}
+        </div>
+        <div class="mobile-team-member-teammates-show-btn">
+            <a href="#">Load teammates</a>
+        </div>
+        <div class="team-member-list-cat team-member-teammates">
+            <h2>{{ teammates_list_title }}</h2> 
+            {% if (teammates_list_subtitle)%} <h4>{{ teammates_list_subtitle }}</h4> {% endif %}
+        </div>
+        <div class="team-member-list-row team-member-teammates-row">
+            {% for item in teammates %}   
+                <div class="team-member-list-item">
+                    <div class="team-member-list-item-inner">
+                        <div class="team-member-list-item-avatar">
+                            <img
+                                class="lazyload"
+                                src="{{ placeholderImage(350, 350) }}"
+                                data-src="{{ item.team_member.meta('avatar').src|resizeDynamic(350, 350) }}"
+                                alt="{{ item.team_member.meta('avatar').alt|e }}"
+                            >
+                        </div>
+                        <div class="team-member-list-item-mention">
+                            <div class="team-member-list-item-mention-inner">
+                                <img src="{{ placeholderImage(350, 350) }}" >
+                                <div class="team-member-list-item-mention-content">
+                                    <div>
+                                        {{ item.team_member.meta('mention')|e('wp_kses_post') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-list-item-info">
+                            <h3>{{ item.team_member.title }} <a href="{{ item.team_member.linkedin_url }}" target="_blank"><span class="linkedin-white-icon"></span></a></h3>
+                            <p>{{ item.team_member.role }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                No Team Members have been found.
+            {% endfor %}
+        </div>
+    </div>
+</section>

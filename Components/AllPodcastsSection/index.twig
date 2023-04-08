@@ -1,0 +1,45 @@
+<section class="all-podcast-section">
+    <div class="container">
+        <div id="all-podcast-row" class="all-blog-row">
+            {% for index, blog in blogs %}
+                {% if index == 3 %}
+                    <div class="all-blog-one-col">
+                        <div class="all-blog-one-col-inner">
+                            <div class="all-blog-one-col-img" style="background-image: url('{{ blog.thumbnail.src|resizeDynamic(600, blog.thumbnail.height / blog.thumbnail.width * 600) }}');"></div>
+                            <div class="all-blog-one-col-content">
+                                <div class="all-blog-one-col-info">
+                                    <h3>{{ blog.post_title|e }}</h3>
+                                    <p>{{ blog.post_excerpt|e }}</p>
+                                </div>
+                                <div class="all-blog-one-col-link">
+                                    <a class="global-link" href="{{ blog.landing_page_link }}">{{ blog.field_object('landing_page_type').choices[blog.landing_page_type] }}</a>
+                                    <span class="all-blog-one-col-icon post-view-link-icon-{{ blog.landing_page_type }}"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="all-blog-col {% if index > 3 %} all-blog-col-last {% endif %}">
+                        <div class="all-blog-col-inner">
+                            <div class="all-blog-col-img" style="background-image: url('{{ blog.thumbnail.src|resizeDynamic(450, 350) }}');"></div>
+                            <div class="all-blog-col-info">
+                                <h3>{{ blog.post_title|e }}</h3>
+                                <p>{{ blog.post_excerpt|slice(0, 90)|e }}</p>
+                            </div>
+                            <div class="all-blog-col-link">
+                                <a class="global-link" href="{{ blog.landing_page_link }}">{{ blog.field_object('landing_page_type').choices[blog.landing_page_type] }}</a>
+                                
+                                <span class="all-blog-col-icon post-view-link-icon-{{ blog.landing_page_type }}"></span>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="all-blog-col">Loading Podcasts...</div>
+            {% endfor %}
+        </div>
+        <div id="all-podcast-navigation" class="all-blog-navigation" data-posts-per-page="{{ posts_per_page }}" data-nonce="{{ nonce }}">{{ page_nav_html }}</div>
+        <div id="all-podcast-load-more-btn-row" class="all-blog-load-more-btn-row">{{ load_more_btn }}</div>
+    </div>
+</section>
+<div class="all-blog-load-spinner hide"></div>

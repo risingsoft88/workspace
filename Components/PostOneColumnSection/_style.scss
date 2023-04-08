@@ -1,0 +1,129 @@
+.post-one-col-section {
+  padding: 80px 0;
+}
+
+.post-one-col-inner {
+  border: 1px solid $color-light-gray;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px 0 $color-light-gray;
+  display: flex;
+}
+
+.post-one-col-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px 0 0 6px;
+  width: 51.79856%;
+}
+
+.post-one-col-content {
+  background-color: $color-white;
+  border-radius: 0 6px 6px 0;
+  padding: 70px;
+  width: 48.20144%;
+}
+
+.post-one-col-info {
+  h3 {
+    color: $color-light-black;
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  p {
+    color: $color-dark-gray;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 10px;
+  }
+}
+
+.post-one-col-link {
+  margin-top: 34px;
+  position: relative;
+
+  .post-one-col-icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    top: -7px;
+    width: 32px;
+  }
+}
+
+@media (min-width : $tablet-break-point) {
+  .post-one-col-inner {
+    @include hover-scale-effect();
+  }
+}
+
+@media #{$tablet-query} {
+  .post-one-col-img {
+    width: 51.6129%;
+  }
+
+  .post-one-col-content {
+    padding: 20px 50px 35px 52px;
+    width: 48.3871%;
+  }
+
+  .post-one-col-info {
+    h3 {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .post-one-col-section {
+    padding: 60px 0;
+  }
+
+  .post-one-col-inner {
+    display: block;
+  }
+
+  .post-one-col-img {
+    border-radius: 6px 6px 0 0;
+    height: 180px;
+    width: 100%;
+  }
+
+  .post-one-col-content {
+    border-radius: 0 0 6px 6px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .post-one-col-info {
+    h3 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  
+    p {
+      font-size: 15px;
+      line-height: 23px;
+      margin-top: 10px;
+    }
+  }
+
+  .post-one-col-link {
+    margin-top: 14px;
+
+    .post-one-col-icon {
+      height: 20px;
+      top: -2px;
+      width: 20px;
+    }
+  }
+}

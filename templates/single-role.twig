@@ -1,0 +1,15 @@
+{% extends 'templates/_document.twig' %}
+
+{% block content %}
+  {% for component in post.meta('postRoleComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+
+  {{ renderComponent('PostPrevNextLinkSection', { prev: post.prev, next: post.next, removeBottomSpace: true }) }}
+  
+  {% for component in post.meta('postRoleFooterComponents') %}
+    {{ renderComponent(component) }}
+  {% endfor %}
+
+  {{ renderComponent('RequestDemoSection', { background_image: role_footer_form_background_image, content: role_footer_form_content, gravity_grom_shortcode: role_footer_gravity_form_shortcode, align_center: true, is_hero: false }) }}
+{% endblock %}

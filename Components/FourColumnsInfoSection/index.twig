@@ -1,0 +1,17 @@
+<section {% if section_id %} id="{{ section_id }}" {% endif %} class="four-columns-info-section">
+    <div class="container">
+        <div class="four-columns-info-row">
+            {% for info in info_list %}
+                <div class="four-columns-info-item">
+                    <div class="four-columns-info-item-inner" {% if info.image %} style="background-image: url('{{ info.image.src }}')" {% endif %}
+                    >
+                        <div>
+                            <h3>{{ info.title }}</h3>
+                            <p>{{ info.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

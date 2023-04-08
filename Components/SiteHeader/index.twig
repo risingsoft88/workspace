@@ -1,0 +1,69 @@
+<header>
+  <div class="container">
+    <div class="header-logo">
+      <a href="{{ site.link }}"><img src="{{ logo.src }}" alt="{{ logo.alt }}"></a>
+      <div class="header-mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <ul class="header-menu">
+        {% for index, item in menu.items %}
+          <li class="{{ item.classes | join(' ') }}">
+            <a class="header-menu-item" href="{{ item.link }}">{{ item.title }}</a>
+            {% if item.children %}
+              <span class="arrow-down"></span>
+              <div class="header-sub-menu-section {% if item.sub_menu_style == 'tab-style' %} tab-style {% elseif item.sub_menu_style == 'list-style' %} list-style {% endif %}">
+                {% if item.sub_menu_style == 'tab-style' %}
+                  <div class="header-sub-menu-container">
+                    <div class="header-sub-menu-row">
+                      <div class="header-sub-menu-list">
+                        <ul>
+                          {% for child in item.children %}
+                            <li>
+                              <a href="{{ child.link }}" data-menu-id="{{ child.id }}"><span><img src="{{ child.meta('icon') }}" alt="nav-icon" style="{{ child.meta('icon_custom_style') }}"></span>{{ child.title }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      <div class="header-sub-menu-description">
+                        {% for index, child in item.children %}
+                          {% set image = child.meta('featured_image') %} 
+                          <div id="header-sub-menu-description-sub-{{ child.id }}" class="header-sub-menu-description-sub" {% if index > 0 %}style="display:none;"{% endif %}
+                          >
+                            <img
+                              class="lazyload"
+                              src="{{ placeholderImage(500, 230) }}"
+                              data-src="{{ image.src|resizeDynamic(500, 230) }}"
+                              alt="{{ image.alt|e }}"
+                            >
+                            <p>{{ child.header_menu_description|e }}</p>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                {% elseif item.sub_menu_style == 'list-style' %}
+                  {% for child in item.children %}
+                    <div class="header-sub-menu-col-list-item">
+                      <a href="{{ child.link }}">{{ child.title }}</a>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="header-actions">
+        <ul>
+          {% for item in right_menu.items %}
+            <li class="{{ item.meta('button_style') }}"><a href="{{ item.link }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

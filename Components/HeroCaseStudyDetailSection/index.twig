@@ -1,0 +1,7 @@
+<section class="hero-case-study-detail-section" style="background-image: url('{{ background_image.src|resizeDynamic(background_image.width)}}')">
+    <div class="container">
+        <div class="hero-case-study-detail-content">
+            {{ content|e('wp_kses_post') }}
+        </div>
+    </div>
+</section>

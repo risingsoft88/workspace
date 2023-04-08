@@ -1,0 +1,21 @@
+.empty-section {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+}
+
+@media (max-width: $mobile-break-point) {
+  .empty-section {
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+  }
+}

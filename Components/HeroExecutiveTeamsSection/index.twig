@@ -1,0 +1,43 @@
+<section class="hero-executive-teams-section">
+    <div class="container">
+        <div class="hero-executive-teams-content">
+            {{ content|e('wp_kses_post') }}
+        </div>
+    </div>
+    {% if background_element_image_1 %}
+        <div class="hero-executive-teams-img-elem-desktop" style="right: -76px;bottom: -524px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image_1.width / 2, background_element_image_1.height / 2) }}"
+                data-src="{{ background_element_image_1.src|resizeDynamic(background_element_image_1.width / 2, background_element_image_1.height / 2) }}"
+                data-srcset="{{ background_element_image_1.src|resizeDynamic(background_element_image_1.width / 2, background_element_image_1.height / 2) }} 1x, {{ background_element_image_1.src|resizeDynamic(background_element_image_1.width, background_element_image_1.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+    {% endif %}
+    {% if background_element_image_2 %}
+        <div class="hero-executive-teams-img-elem-desktop" style="right: -469px;bottom: -266px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image_2.width / 2, background_element_image_2.height / 2) }}"
+                data-src="{{ background_element_image_2.src|resizeDynamic(background_element_image_2.width / 2, background_element_image_2.height / 2) }}"
+                data-srcset="{{ background_element_image_2.src|resizeDynamic(background_element_image_2.width / 2, background_element_image_2.height / 2) }} 1x, {{ background_element_image_2.src|resizeDynamic(background_element_image_2.width, background_element_image_2.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+    {% endif %}
+    {% if background_element_image_3 %}
+        <div class="hero-executive-teams-img-elem-desktop" style="right: -359px;bottom: 220px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image_3.width / 2, background_element_image_3.height / 2) }}"
+                data-src="{{ background_element_image_3.src|resizeDynamic(background_element_image_3.width / 2, background_element_image_3.height / 2) }}"
+                data-srcset="{{ background_element_image_3.src|resizeDynamic(background_element_image_3.width / 2, background_element_image_3.height / 2) }} 1x, {{ background_element_image_3.src|resizeDynamic(background_element_image_3.width, background_element_image_3.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+    {% endif %}
+</section>

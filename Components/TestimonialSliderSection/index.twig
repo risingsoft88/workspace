@@ -1,0 +1,65 @@
+<section class="testimonial-slider-section">
+    <div class="container">
+        <div class="testimonial-slider-title">
+            {{ content|e('wp_kses_post') }}
+        </div>
+    </div>
+    <div class="testimonial-slider-elem">
+        <div class="testimonial-slider-buttons">
+            <div class="testimonial-slider-buttons-container">
+                <div class="testimonial-slider-prev"></div>
+                <div class="testimonial-slider-next"></div>
+            </div>
+        </div>
+        <div class="testimonial-slider-container">
+            <div class="testimonial-slider-wrapper" data-mobile-index="1">
+                {% for index, item in testimonials %}  
+                    <div class="testimonial-slider-item testimonial-slider-item-{{ index + 1 }} {% if index == 0 %} testimonial-slider-item-show {% endif %}">
+                        <div class="testimonial-slider-item-inner">
+                            <div class="testimonial-slider-item-left">
+                                <div class="avatar">
+                                    <img
+                                        class="lazyload"
+                                        data-src="{{ item.testimonial.meta('user_avatar').src|resizeDynamic(120, 120) }}"
+                                        data-srcset="{{ item.testimonial.meta('user_avatar').src|resizeDynamic(120, 120) }} 1x, {{ item.testimonial.meta('user_avatar').src|resizeDynamic(240, 240) }} 2x"
+                                        alt="{{ item.testimonial.meta('user_avatar').alt|e }}"
+                                    />
+                                </div>
+                            </div>
+                            <div class="testimonial-slider-item-right">
+                                <div class="info">
+                                    <div class="info-title">
+                                        <div class="avatar">
+                                            <img
+                                                class="lazyload"
+                                                data-src="{{ item.testimonial.meta('user_avatar').src|resizeDynamic(120, 120) }}"
+                                                data-srcset="{{ item.testimonial.meta('user_avatar').src|resizeDynamic(120, 120) }} 1x, {{ item.testimonial.meta('user_avatar').src|resizeDynamic(240, 240) }} 2x"
+                                                alt="{{ item.testimonial.meta('user_avatar').alt|e }}"
+                                            />
+                                        </div>
+                                        <h3>{{ item.testimonial.title|e('wp_kses_post') }}</h3>
+                                    </div>
+                                    {{ item.testimonial.meta('content')|e('wp_kses_post') }}
+                                </div>
+                                <div class="company">
+                                    <img
+                                        class="lazyload"
+                                        data-src="{{ item.testimonial.meta('company_logo').src|resizeDynamic(item.testimonial.meta('company_logo').width / 2) }}"
+                                        data-srcset="{{ item.testimonial.meta('company_logo').src|resizeDynamic(item.testimonial.meta('company_logo').width / 2) }} 1x, {{ item.testimonial.meta('company_logo').src|resizeDynamic(item.testimonial.meta('company_logo').width) }} 2x"
+                                        alt="{{ item.testimonial.meta('company_logo').alt|e }}"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                {% else %}
+                    No testimonials have been found.
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-slider-mobile-btn">
+        <a href="#">Load more testimonials</a>
+    </div>
+    <div class="testimonial-pagination"></div>
+</section>

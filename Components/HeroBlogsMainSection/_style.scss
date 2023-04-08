@@ -1,0 +1,42 @@
+.hero-blogs-main-section {
+  background-color: $color-very-light-gray;
+  overflow: hidden;
+  padding: 118px 0 113px;
+  position: relative;
+}
+
+.hero-blogs-main-content {
+  max-width: 550px;
+  position: relative;
+  z-index: 2;
+
+  p {
+    color: $color-light-black;
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 10px;
+  }
+}
+
+.hero-blogs-main-img-elem-desktop {
+  position: absolute;
+  z-index: 1;
+}
+
+@media (max-width : $mobile-break-point) {
+  .hero-blogs-main-section {
+    padding: 56px 0 53px;
+  }
+
+  .hero-blogs-main-content {
+    p {
+      font-size: 20px;
+      line-height: 28px;
+      margin-top: 9px;
+    }
+  }
+
+  .hero-blogs-main-img-elem-desktop {
+    display: none;
+  }
+}

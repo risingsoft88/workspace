@@ -1,0 +1,28 @@
+<section class="quote-section">
+    <div class="container">
+        <div class="quote-row">
+            <div class="quote-avatar">
+                <div class="quote-avatar-background" style="background-image: url('{{ background_image.src|resizeDynamic(800, 800) }}')"></div>
+                <div class="quote-avatar-inner">
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(avatar.width, avatar.height) }}"
+                        data-src="{{ avatar.src|resizeDynamic(avatar.width) }}"
+                        alt="{{ avatar.alt|e }}"
+                    >
+                </div>
+            </div>
+            <div class="quote-info">
+                <div class="quote-info-inner">
+                    <div class="quote-name-role">
+                        <div class="quote-name">{{ name|e('wp_kses_post') }}</div>
+                        <div class="quote-role">{{ role|e('wp_kses_post') }}</div>
+                    </div>
+                    <div class="quote-content">
+                        {{ content|e('wp_kses_post') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

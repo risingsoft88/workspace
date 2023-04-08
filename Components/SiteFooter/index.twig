@@ -1,0 +1,38 @@
+<footer>
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-title">
+                <div class="footer-logo">
+                    <a href="{{ site.link }}"><img src="{{ footer_logo.src }}" alt="{{ footer_logo.alt }}"></a>
+                </div>
+                <h2>{{ footer_title|e('wp_kses_post') }}</h2>
+            </div>
+            <div class="footer-row">
+                <div class="footer-col">
+                    {{ footer_widget_1 }}
+                </div>
+                <div class="footer-col">
+                    {{ footer_widget_2 }}
+                </div>
+                <div class="footer-col">
+                    {{ footer_widget_3 }}
+                </div>
+                <div class="footer-col footer-col-last">
+                    {{ footer_widget_4 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <p>
+                {% for item in footer_links %}
+                    <a href="{{ item.link.url }}" {% if item.link.target %}target="{{ item.link.target }}"{% endif %}>
+                        {{ item.link.title }}
+                    </a>
+                {% endfor %}
+            </p>
+            <p>{{ footer_copyright|e('wp_kses_post') }}</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,150 @@
+.team-section {
+  padding: 174px 0 170px;
+}
+
+.team-content {
+  margin: 0 auto;
+  max-width: 910px;
+  text-align: center;
+
+  h2 {
+    color: $color-light-black;
+    font-size: 62px;
+    line-height: 70px;
+  }
+
+  p {
+    color: $color-light-black;
+    font-size: 28px;
+    line-height: 38px;
+    margin-top: 22px;
+  }
+}
+
+.team-link {
+  text-align: center;
+
+  a {
+    background-color: $color-blue;
+    border-radius: 3px;
+    color: $color-white;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: $font-weight-medium;
+    line-height: 28px;
+    padding: 16px 43px;
+  }
+}
+
+.team-images {
+  @include clearfix();
+  margin: 0 -10px;
+  overflow: hidden;
+  padding: 69px 0 70px;
+}
+
+.team-image-item {
+  float: left;
+  padding: 10px;
+}
+
+.team-image-item-1 {
+  height: 230px;
+  width: 16.66667%;
+}
+
+.team-image-item-2 {
+  height: 460px;
+  width: 33.33333%;
+}
+
+.team-image-item-inner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+}
+
+@media #{$tablet-query} {
+  .team-section {
+    padding: 100px 0;
+  }
+
+  .team-content {
+    max-width: 100%;
+    
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  .team-images {
+    padding: 45px 0;
+  }
+
+  .team-image-item {
+    padding: 5px;
+  }
+
+  .team-link {
+    a {
+      font-size: 16px;
+      padding: 14px 30px;
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .team-section {
+    padding: 62px 0 60px;
+  }
+  
+  .team-content {
+    h2 {
+      color: $color-dark-blue;
+      font-size: 30px;
+      line-height: 38px;
+    }
+  
+    p {
+      font-size: 18px;
+      line-height: 26px;
+      margin-top: 9px;
+    }
+  }
+  
+  .team-link {
+    a {
+      font-size: 16px;
+      line-height: 22px;
+      padding: 12px 28px 11px;
+    }
+  }
+  
+  .team-images {
+    margin: 0 -3px;
+    padding: 16px 0 18px;
+  }
+  
+  .team-image-item {
+    padding: 3px;
+  }
+  
+  .team-image-item-1 {
+    height: 90px;
+    width: 33.33333%;
+  }
+  
+  .team-image-item-2 {
+    height: 180px;
+    width: 66.66666%;
+  }
+}

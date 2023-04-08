@@ -1,0 +1,9 @@
+<section class="navigation-section">
+    <div class="container">
+        <div class="navigation-list">
+            {% for navigation in navigations %}
+                <div class="navigation-item" data-section-id="{{ navigation.section_id }}">{{ navigation.section_name }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

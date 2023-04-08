@@ -1,0 +1,304 @@
+.team-member-list-section {
+  padding: 83px 0 137px;
+}
+
+.team-member-list-cat {
+  h2 {
+    color: $color-light-black;
+    font-size: 46px;
+    line-height: 54px;
+  }
+
+  h4 {
+    color: $color-dark-gray;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+}
+
+.team-member-teammates {
+  margin-top: 60px;
+}
+
+.team-member-list-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 32px -25px 0;
+}
+
+.team-member-list-item {
+  padding: 25px;
+  position: relative;
+  width: 25%;
+
+  &:hover {
+    .team-member-list-item-link {
+      opacity: 1;
+    }
+
+    .team-member-list-item-info {
+      h3 {
+        color: $color-white;
+
+        a {
+          display: block;
+        }
+      }
+      
+      p {
+        color: $color-white;
+      }
+    }
+
+    .team-member-list-item-mention {
+      opacity: 1;
+    }
+  }
+}
+
+.team-member-list-item-link {
+  align-items: center;
+  background-color: rgba($color-blue, 0.9);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity linear 0.2s;
+  z-index: 1;
+
+  a {
+    border: 2px solid $color-dark-white;
+    border-radius: 3px;
+    color: $color-dark-white;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: $font-weight-medium;
+    line-height: 28px;
+    padding: 14px 56px;
+  }
+}
+
+.team-member-list-item-mention {
+  align-items: center;
+  background-color: rgba($color-blue, 0.9);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity linear 0.2s;
+  z-index: 1;
+}
+
+.team-member-list-item-mention-inner {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.team-member-list-item-mention-content {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 0 45px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+
+  p {
+    color: $color-dark-white;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 28px;
+  }
+}
+
+.team-member-list-item-info {
+  @include clearfix();
+  padding: 17px 0;
+  position: relative;
+  z-index: 2;
+
+  h3 {
+    color: $color-light-black;
+    font-size: 22px;
+    line-height: 32px;
+    transition: color linear 0.2s;
+
+    a {
+      display: none;
+      float: right;
+      margin-top: 5px;
+    }
+  }
+
+  p {
+    color: $color-dark-gray;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 6px;
+    transition: color linear 0.2s;
+  }
+}
+
+.team-member-list-item-avatar {
+  img {
+    background-color: #f1f3f4;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMTkzIDM4NCA1OS40IDI1LjgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTE5MyAzODQgNTkuNCAyNS44OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHJlY3QgeD0iLTE3MC44IiB5PSIzOTEuNyIgdHJhbnNmb3JtPSJtYXRyaXgoLTAuNzA3MSAtMC43MDcxIDAuNzA3MSAtMC43MDcxIC01NDkuODM5NyA1NjYuMDQ5KSIgZmlsbD0iIzE1NjVDMCIgd2lkdGg9IjI2LjIiIGhlaWdodD0iMTAuMyIvPjxyZWN0IHg9Ii0xOTMuMiIgeT0iMzkxLjciIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgLTAuNzA3MSAwLjcwNzEgLTAuNzA3MSAtNTg4LjEwMDYgNTUwLjIwMDcpIiBmaWxsPSIjMTU2NUMwIiB3aWR0aD0iMjYuMiIgaGVpZ2h0PSIxMC4zIi8+PHJlY3QgeD0iLTE0NiIgeT0iMzg2LjEiIHRyYW5zZm9ybT0ibWF0cml4KC0wLjcwNzEgLTAuNzA3MSAwLjcwNzEgLTAuNzA3MSAtNTE3LjE4MjEgNTY4LjM3KSIgZmlsbD0iIzI0QTVGQyIgd2lkdGg9IjEwLjMiIGhlaWdodD0iMTAuMyIvPjwvc3ZnPg==');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 72px 32px;
+    width: 100%;
+  }
+}
+
+.mobile-team-member-teammates-show-btn {
+  display: none;
+  margin-top: 19px;
+  text-align: center;
+
+  a {
+    border: 1px solid $color-light-gray;
+    border-radius: 23px;
+    color: $color-dark-gray;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 9px 30px 7px;
+  }
+}
+
+@media #{$tablet-query} {
+  .team-member-list-cat {
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  .team-member-list-item-info {
+    h3 {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  .team-member-list-item-link {
+    padding-bottom: 40px;
+    
+    a {
+      font-size: 16px;
+      padding: 10px 30px;
+    }
+  }
+
+  .team-member-list-item-mention-content {
+    p {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .mobile-team-member-teammates-show-btn {
+    display: block;
+  }
+
+  .team-member-list-section {
+    padding: 41px 0 80px;
+
+    .container {
+      padding: 0;
+    }
+  }
+  
+  .team-member-list-cat {
+    padding: 0 25px;
+
+    h2 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+  
+  .team-member-teammates {
+    margin-top: 0;
+  }
+  
+  .team-member-list-row {
+    margin: 9px 0 0;
+  }
+  
+  .team-member-list-item {
+    padding: 20px 25px;
+    width: 50%;
+  }
+  
+  .team-member-list-item-info {
+    padding: 12px 0 0;
+  
+    h3 {
+      font-size: 18px;
+      font-weight: $font-weight-medium;
+      line-height: 26px;
+    }
+  
+    p {
+      font-size: 15px;
+      line-height: 23px;
+      margin-top: 0;
+    }
+  }
+
+  .team-member-list-item-mention-content {
+    p {
+      font-size: 15px;
+      line-height: 23px;
+    }
+  }
+
+  .team-member-list-item-avatar {
+    img {
+      background-size: 64px 27px;
+    }
+  }
+
+  .team-member-list-item-link {
+    a {
+      font-size: 18px;
+      padding: 10px 30px;
+    }
+  }
+
+  .team-member-teammates {
+    display: none;
+    margin-top: 19px;
+  }
+  
+  .team-member-teammates-row {
+    display: none;
+  }
+}
+
+@media (max-width : 600px) {
+  .team-member-list-item {
+    width: 100%;
+  }
+}

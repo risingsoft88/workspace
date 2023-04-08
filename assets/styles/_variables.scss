@@ -1,0 +1,32 @@
+$container-width: 1390px;
+$container-tablet-width: 1150px;
+$post-container-width: 1150px;
+
+$tablet-break-point: 1440px;
+$mobile-break-point: 1000px;
+$single-column-break-point: 767px;
+$medium-mobile-break-point: 460px;
+$small-mobile-break-point: 430px;
+$tiny-mobile-break-point: 345px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$color-blue: #1565c0;
+$color-white-blue: #a1c1e6;
+$color-light-blue: #24a5fc;
+$color-ligher-blue: #f3f7fc;
+$color-dark-blue: #0b3360;
+$color-heavy-blue: #08294d;
+$color-white: #fff;
+$color-dark-white: #f2f7fd;
+$color-gray: #888b97;
+$color-dark-gray: #787878;
+$color-light-gray: #e1e5eb;
+$color-very-light-gray: #e7eff8;
+$color-light-black: #3f3f3f;
+
+
+// live version for real device : #{$tablet-query}
+$tablet-query: 'only screen and (min-width: #{$mobile-break-point}) and (max-width: #{$tablet-break-point})';

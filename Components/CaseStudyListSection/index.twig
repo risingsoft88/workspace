@@ -1,0 +1,33 @@
+<section class="case-study-list-section">
+    <div class="container">
+        <div class="case-study-list-cat-list-label" data-status="close">ALL</div>
+        <div class="case-study-list-cat-list">
+            <div class="case-study-list-cat-item active" data-slug="all">ALL</div>
+            {% for item in case_study_category_list %}
+                <div class="case-study-list-cat-item" data-slug="{{ item.case_study_category.slug }}">{{ item.case_study_category }}</div>
+            {% endfor %}
+        </div>
+        <div class="case-study-list-row">
+            {% for item in case_study_list %}
+                <div class="case-study-list all {% for cat in item.get_terms('case-study-category') %} {{ cat.slug }} {% endfor %}">
+                    <a href="{% if item.landing_page_type == 'read-article' %}{{ item.link }}{% else %}{{ item.landing_page_link }}{% endif %}">
+                        <div class="case-study-list-inner">
+                            <div class="case-study-list-img" style="background-image: url('{{ item.thumbnail.src|resizeDynamic(500, 400) }}');"></div>
+                            <div class="case-study-list-info">
+                                <h3>{{ item.post_title|e }}</h3>
+                                <p>{{ item.post_excerpt|slice(0, 90)|e }}</p>
+                            </div>
+                            <div class="case-study-list-link">
+                                <p class="global-link">{{ item.field_object('landing_page_type').choices[item.landing_page_type] }}</p>
+                                
+                                <span class="case-study-list-icon post-view-link-icon-{{ item.landing_page_type }}"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% else %}
+                No Posts have been found.
+            {% endfor %}
+        </div>
+    </div>
+</section>

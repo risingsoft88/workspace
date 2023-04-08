@@ -1,0 +1,38 @@
+.hero-careers-section {
+  background-color: $color-very-light-gray;
+  overflow: hidden;
+  padding: 159px 0 148px;
+  position: relative;
+}
+
+.hero-careers-img-elem-desktop {
+  position: absolute;
+}
+
+.hero-careers-content {
+  max-width: 430px;
+
+  p {
+    color: $color-light-black;
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .hero-careers-section {
+    padding: 56px 0 53px;
+  }
+
+  .hero-careers-content {
+    p {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  .hero-careers-img-elem-desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+<section {% if section_id %} id="{{ section_id }}" {% endif %} class="block-image-text-5-section">
+    <div class="container">
+        <div class="block-image-text-5-row {% if row_reverse %} row-reverse {% endif %}">
+            <div class="image-col">
+                {% if retina_image %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                        data-sizes="auto"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% else %}
+                    <img
+                        class="lazyload"
+                        src="{{ placeholderImage(image.width, image.height) }}"
+                        data-src="{{ image.src|resizeDynamic(image.width) }}"
+                        alt="{{ image.alt|e }}"
+                    >
+                {% endif %}
+            </div>
+            <div class="content-col">
+                {{ content|e('wp_kses_post') }}
+                {% if link_title %}
+                    <div class="block-link">
+                        <a class="global-link" href="{{ link_url }}" {% if new_tab %}target="_blank"{% endif %}>{{ link_title }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

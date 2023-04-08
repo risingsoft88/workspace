@@ -1,0 +1,38 @@
+<section class="post-four-col-section">
+    <div class="container">
+        <div class="post-four-col-title">
+            {{ content|e('wp_kses_post') }}
+        </div>
+        <div class="post-four-col-row" data-mobile-index="1">
+            {% for index, item in posts %}
+                <div class="post-four-col post-four-col-{{ index + 1 }} {% if index == 0 %} post-four-col-show {% endif %}">
+                    <a href="{% if item.post.post_type == 'podcast' or item.post.landing_page_type == 'read-article' %} {{ item.post.link }} {% else %} {{ item.post.landing_page_link }} {% endif %}">
+                        <div class="post-four-col-inner">
+                            <div class="post-four-col-img" style="background-image: url('{{ item.post.thumbnail.src|resizeDynamic(400, 200) }}');"></div>
+                            <div class="post-four-col-info">
+                                <h3>{{ item.post.post_title|e }}</h3>
+                                <p>{{ item.post.post_excerpt|e }}</p>
+                            </div>
+                            <div class="post-four-col-link">
+                                <p class="global-link">
+                                    {% if item.post.post_type == 'podcast' %}
+                                        Listen now
+                                    {% else %}
+                                        {{ item.post.field_object('landing_page_type').choices[item.post.landing_page_type] }}
+                                    {% endif %}
+                                </p>
+                                
+                                <span class="post-four-col-icon post-view-link-icon-{% if item.post.post_type == 'podcast' %}listen-now{% else %}{{ item.post.landing_page_type }}{% endif %}"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% else %}
+                No Posts have been found.
+            {% endfor %}
+        </div>
+        <div class="post-four-mobile-btn">
+            <a href="#">Load more news</a>
+        </div>
+    </div>
+</section>

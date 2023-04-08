@@ -1,0 +1,12 @@
+<section class="post-prev-next-link-section {% if not next %} mobile-hide {% endif %} {% if removeBottomSpace %} remove-bottom-space {% endif %}">
+    <div class="container">
+        <div class="post-prev-next-link-row">
+            {% if prev %}
+                <div class="post-prev"><a class="global-link" href="{{ prev.link }}">{{ prev.title }}</a></div>
+            {% endif %}
+            {% if next %}
+                <div class="post-next"><a class="global-link" href="{{ next.link }}">{{ next.title }}</a></div>
+            {% endif %}
+        </div>
+    </div>
+</section>

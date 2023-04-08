@@ -1,0 +1,13 @@
+<section {% if section_id %} id="{{ section_id }}" {% endif %} class="block-content-section {{ display_mode }}">
+    <div class="container">
+        <div class="block-content-row position-{{ position }} {{ section_padding }} {% if full_width %} full-width {% endif %}" style="max-width:{{sectio_width}};">
+            
+            {{ content }}
+            {% if link_title %}
+                <div class="block-content-link">
+                    <a href="{{ link_url }}">{{ link_title }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+<section {% if section_id %} id="{{ section_id }}" {% endif %} class="block-form-text-section {% if gray_background_color %} gray-background-color {% endif %}">
+    <div class="container">
+        <div class="block-form-text-row {% if row_reverse %} row-reverse {% endif %}">
+            <div class="content-col">
+                {{ content|e('wp_kses_post') }}
+            </div>
+            <div class="form-col">
+                <div class="form-col-inner">
+                    {{ gravity_grom_shortcode|shortcodes }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

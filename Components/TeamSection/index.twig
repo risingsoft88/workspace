@@ -1,0 +1,23 @@
+<section {% if section_id %} id="{{ section_id }}" {% endif %} class="team-section">
+    <div class="container">
+        <div class="team-content">
+            {{ content|e('wp_kses_post') }}
+        </div>
+        {% if team_images %}
+            <div class="team-images">
+                {% for item in team_images %}
+                    {% if item.image.src != "" %}
+                        <div class="team-image-item team-image-item-{{ item.size }}">
+                            <div class="team-image-item-inner" style="background-image: url('{{ item.image.src|resizeDynamic(item.image.width)}}')"></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            nothing
+        {% endif %}
+        <div class="team-link">
+            <a href="{{ link_url }}">{{ link_title }}</a>
+        </div>
+    </div>
+</section>

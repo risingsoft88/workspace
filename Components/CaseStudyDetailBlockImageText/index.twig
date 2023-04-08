@@ -1,0 +1,35 @@
+<section class="case-study-detail-block-image-text-section">
+    <div class="container">
+        <div class="case-study-detail-block-image-text-row">
+            <div class="content-col">
+                {{ content|e('wp_kses_post') }}
+                {% if link_title %}
+                    <div class="block-link">
+                        <a href="{{ link_url }}" {% if new_tab %}target="_blank"{% endif %}>{{ link_title }}</a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="image-col">
+                <a href="{{ link_url }}">
+                    {% if retina_image %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(image.width, image.height) }}"
+                            data-src="{{ image.src|resizeDynamic(image.width) }}"
+                            data-srcset="{{ image.src|resizeDynamic(image.width) }} 1x, {{ retina_image.src|resizeDynamic(retina_image.width) }} 2x"
+                            data-sizes="auto"
+                            alt="{{ image.alt|e }}"
+                        >
+                    {% else %}
+                        <img
+                            class="lazyload"
+                            src="{{ placeholderImage(image.width, image.height) }}"
+                            data-src="{{ image.src|resizeDynamic(image.width) }}"
+                            alt="{{ image.alt|e }}"
+                        >
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,51 @@
+<section class="team-member-hero-section">
+    {% if hero_background_element_image %}
+        <div class="team-member-hero-img-elem-desktop" style="right: -521px;bottom: -153px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(hero_background_element_image.width / 2, hero_background_element_image.height / 2) }}"
+                data-src="{{ hero_background_element_image.src|resizeDynamic(hero_background_element_image.width / 2, hero_background_element_image.height / 2) }}"
+                data-srcset="{{ hero_background_element_image.src|resizeDynamic(hero_background_element_image.width / 2, hero_background_element_image.height / 2) }} 1x, {{ hero_background_element_image.src|resizeDynamic(hero_background_element_image.width, hero_background_element_image.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="team-member-hero-row">
+            <div class="team-member-hero-content">
+                <h1>{{ post.title }}</h1>
+                <p>{{ post.role }}</p>
+                <div class="team-member-hero-linkedin-link">
+                    <a href="{{ post.linkedin_url }}" target="_blank"><span class="linkedin-icon"></span></a>
+                </div>
+            </div>
+            <div class="team-member-hero-avatar">
+                <img
+                    class="lazyload"
+                    src="{{ placeholderImage(308, 308) }}"
+                    data-src="{{ avatar_image.src|resizeDynamic(308) }}"
+                    alt="{{ avatar_image.alt|e }}"
+                >
+            </div>
+        </div>
+    </div>
+</section>
+<section class="team-member-content-section">
+    <div class="container">
+        <div class="team-member-content-row">
+            <div class="team-member-content-info">
+                {{ post.meta('content')|e('wp_kses_post') }}
+            </div>
+            <div class="team-member-content-mention">
+                {{ post.meta('mention')|e('wp_kses_post') }}
+                
+                {% if post.contact_button_title %}
+                    <div class="team-member-content-mention-btn">
+                        <a href="{{ post.contact_button_link }}">{{ post.contact_button_title }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

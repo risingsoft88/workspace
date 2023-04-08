@@ -1,0 +1,233 @@
+.block-image-text-section {
+  padding: 80px 0;
+
+  &.gray-background-color {
+    background-color: $color-ligher-blue;
+  }
+}
+
+.block-image-text-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.image-text-same-width {
+    margin: 0 -50px;
+
+    .image-col {
+      padding: 0 50px;
+      width: 50%;
+    }
+    
+    .content-col {
+      padding: 0 50px;
+      width: 50%;
+    }
+  }
+
+  .image-col {
+    width: 48.20144%;
+  }
+
+  .image-col-inner {
+    @include clearfix();
+    
+    img {
+      border-radius: 4px;
+      float: left;
+      width: 100%;
+    }
+  }
+
+  .image-shadow {
+    box-shadow: 0 2px 21px 0 rgba(11, 51, 96, 0.05);
+  }
+
+  .image-shadow-none {
+    box-shadow: none !important;
+  }
+
+  .content-col {
+    width: 39.56835%;
+  
+    h2 {
+      color: $color-light-black;
+      font-size: 34px;
+      line-height: 46px;
+    }
+  
+    p {
+      color: $color-dark-gray;
+      font-size: 20px;
+      line-height: 30px;
+      margin-top: 20px;
+
+      a {
+        color: $color-blue;
+      }
+    }
+
+    ul {
+      padding-top: 10px;
+    }
+
+    li {
+      color: $color-dark-gray;
+      font-size: 18px;
+      line-height: 28px;
+      margin-top: 10px;
+      padding-left: 35px;
+      position: relative;
+
+      &::before {
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMjk2IDM4OCAxNy40IDE3LjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgLTI5NiAzODggMTcuNCAxNy40OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iIzE1NjVDMCIgZD0iTS0yODcuMyw0MDUuNGM0LjgsMCw4LjctMy45LDguNy04LjdjMC00LjgtMy45LTguNy04LjctOC43Yy00LjgsMC04LjcsMy45LTguNyw4LjdDLTI5Niw0MDEuNS0yOTIuMSw0MDUuNC0yODcuMyw0MDUuNHogTS0yODcuMyw0MDMuN2MtMy45LDAtNy0zLjEtNy03YzAtMy45LDMuMS03LDctN2MzLjksMCw3LDMuMSw3LDdDLTI4MC4zLDQwMC42LTI4My40LDQwMy43LTI4Ny4zLDQwMy43eiBNLTI4OC40LDQwMC45bDYuMS02YzAuMi0wLjIsMC4yLTAuNCwwLTAuNmwtMC44LTAuOGMtMC4yLTAuMi0wLjQtMC4yLTAuNiwwbC01LDQuOWwtMi4xLTIuMWMtMC4yLTAuMi0wLjQtMC4yLTAuNiwwbC0wLjgsMC44Yy0wLjIsMC4yLTAuMiwwLjQsMCwwLjZsMy4yLDMuMkMtMjg4LjksNDAxLTI4OC42LDQwMS0yODguNCw0MDAuOXoiLz48L3N2Zz4=');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        height: 18px;
+        left: 0;
+        position: absolute;
+        top: 5px;
+        width: 18px;
+      }
+    }
+  }
+
+  .block-link {
+    margin-top: 20px;
+  }
+
+  .content-icon {
+    margin-bottom: 9px;
+  }
+}
+
+@media #{$tablet-query} {
+  .block-image-text-section {
+    padding: 60px 0;
+  }
+
+  .block-image-text-row {
+    align-items: initial;
+
+    &.image-text-same-width {
+      margin: 0 -20px;
+
+      .image-col {
+        padding: 0 20px;
+      }
+      
+      .content-col {
+        padding: 0 20px;
+      }
+    }
+    
+    .content-col {
+      h2 {
+        font-size: 30px;
+        line-height: 40px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+
+      li {
+        font-size: 16px;
+        line-height: 26px;
+        padding-left: 25px;
+
+        &::before {
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width : $mobile-break-point) {
+  .block-image-text-row {
+    .image-col {
+      img {
+        @include hover-scale-effect();
+      }
+    }
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .block-image-text-section {
+    padding: 33px 0;
+  }
+
+  .block-image-text-row {
+    display: block;
+
+    &.image-text-same-width {
+      margin: 0;
+      
+      .image-col {
+        padding: 0;
+        width: 100%;
+      }
+
+      .content-col {
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    .image-col {
+      width: 100%;
+    }
+
+    .content-col {
+      margin-top: 20px;
+      width: 100%;
+
+      h2 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 23px;
+        margin-top: 10px;
+      }
+
+      ul {
+        padding-top: 7px;
+      }
+
+      li {
+        font-size: 15px;
+        line-height: 23px;
+        margin-top: 15px;
+        padding-left: 25px;
+
+        &::before {
+          height: 12px;
+          left: -1px;
+          top: 5px;
+          width: 12px;
+        }
+      }
+    }
+
+    .content-icon {
+      display: none;
+    }
+
+    .block-link {
+      margin-top: 14px;
+    }
+  }
+}

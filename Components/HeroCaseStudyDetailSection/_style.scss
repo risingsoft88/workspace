@@ -1,0 +1,38 @@
+.hero-case-study-detail-section {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 81px 0 139px;
+}
+
+.hero-case-study-detail-content {
+  max-width: 910px;
+
+  h1 {
+    color: $color-white;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    color: $color-white;
+    font-size: 34px;
+    line-height: 46px;
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .hero-case-study-detail-section {
+    padding: 51px 0 48px;
+  }
+
+  .hero-case-study-detail-content {
+    h1 {
+      margin-top: 11px;
+    }
+  
+    h2 {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}

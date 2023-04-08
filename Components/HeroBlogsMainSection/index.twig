@@ -1,0 +1,19 @@
+<section class="hero-blogs-main-section">
+    <div class="container">
+        <div class="hero-blogs-main-content">
+            {{ content|e('wp_kses_post') }}
+        </div>
+    </div>
+    {% if background_element_image %}
+        <div class="hero-blogs-main-img-elem-desktop" style="right: -609px;bottom: -204px;">
+            <img
+                class="lazyload"
+                src="{{ placeholderImage(background_element_image.width / 2, background_element_image.height / 2) }}"
+                data-src="{{ background_element_image.src|resizeDynamic(background_element_image.width / 2, background_element_image.height / 2) }}"
+                data-srcset="{{ background_element_image.src|resizeDynamic(background_element_image.width / 2, background_element_image.height / 2) }} 1x, {{ background_element_image.src|resizeDynamic(background_element_image.width, background_element_image.height) }} 2x"
+                data-sizes="auto"
+                alt="hero-image-1"
+            >
+        </div>
+    {% endif %}
+</section>

@@ -1,0 +1,56 @@
+@mixin font-face(
+  $family,
+  $file,
+  $weight: 'normal',
+  $style: 'normal',
+  $woff2: true,
+  $base-path: '../assets/fonts/'
+) {
+  @font-face {
+    font-display: swap;
+    font-family: $family;
+    font-style: unquote($style);
+    font-weight: unquote($weight);
+    @if $woff2 {
+      src: url($base-path+$file+'.woff2') format('woff2'),
+        url($base-path+$file+'.woff') format('woff');
+    } @else {
+      src: url($base-path+$file+'.woff') format('woff');
+    }
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
+@mixin global-hover-effect() {
+  transition: opacity 0.2s linear;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+@mixin remove-phone-tab-high-light() {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+@mixin hover-scale-effect() {
+  transition: transform 0.2s linear, box-shadow 0.2s linear;
+
+  &:hover {
+    box-shadow: 0 0 100px rgba(198, 198, 198, 0.75);
+    transform: scale(1.05);
+  }
+}
+
+@mixin gradient-y($start-color: $gray-700, $end-color: $gray-800, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+}

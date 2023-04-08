@@ -1,0 +1,167 @@
+.quote-section {
+  background-color: $color-ligher-blue;
+  overflow: hidden;
+  padding: 143px 0 139px;
+}
+
+.quote-row {
+  display: flex;
+}
+
+.quote-avatar {
+  position: relative;
+  width: 34.53237%;
+    
+  img {
+    border: 4px solid $color-ligher-blue;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.quote-avatar-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: -200px;
+  left: -500px;
+  position: absolute;
+  right: 50%;
+  top: -200px;
+  z-index: 1;
+}
+
+.quote-avatar-inner {
+  padding: 0 25%;
+  text-align: center;
+}
+
+.quote-info {
+  width: 65.46763%;
+}
+
+.quote-info-inner {
+  padding-right: 13.18681%;
+}
+
+.quote-name-role {
+  align-items: baseline;
+  display: flex;
+}
+
+.quote-name {
+  color: $color-light-black;
+  font-size: 30px;
+  font-weight: $font-weight-bold;
+  line-height: 38px;
+}
+
+.quote-role {
+  color: $color-light-black;
+  font-size: 22px;
+  font-weight: $font-weight-bold;
+  line-height: 32px;
+  margin-left: 25px;
+}
+
+.quote-content {
+  margin-top: 17px;
+
+  h2 {
+    color: $color-light-black;
+    font-size: 28px;
+    font-weight: $font-weight-normal;
+    line-height: 38px;
+  }
+
+  p {
+    color: $color-dark-gray;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 20px;
+  }
+}
+
+@media #{$tablet-query} {
+  .quote-name-role {
+    display: block;
+  }
+
+  .quote-role {
+    margin-left: 0;
+  }
+}
+
+@media (max-width : $mobile-break-point) {
+  .quote-section {
+    background-color: $color-white;
+    padding: 58px 0 59px;
+  }
+
+  .quote-row {
+    display: block;
+  }
+
+  .quote-avatar {
+    width: 100%;
+
+    img {
+      width: 114px;
+    }
+  }
+
+  .quote-avatar-background {
+    background-position: center bottom;
+    bottom: 50%;
+    left: -40px;
+    right: -40px;
+    top: -70px;
+  }
+
+  .quote-avatar-inner {
+    padding: 0;
+    text-align: center;
+  }
+
+  .quote-info {
+    width: 100%;
+  }
+
+  .quote-info-inner {
+    padding: 0;
+  }
+
+  .quote-name-role {
+    display: block;
+    text-align: center;
+  }
+
+  .quote-name {
+    color: $color-dark-blue;
+    font-size: 30px;
+    line-height: 38px;
+    margin-top: 16px;
+  }
+    
+  .quote-role {
+    color: $color-dark-blue;
+    font-size: 16px;
+    line-height: 16px;
+    margin-left: 0;
+    margin-top: 7px;
+  }
+
+  .quote-content {
+    margin-top: 20px;
+        
+    h2 {
+      font-size: 18px;
+      line-height: 26px;
+    }
+        
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      margin-top: 10px;
+    }
+  }
+}

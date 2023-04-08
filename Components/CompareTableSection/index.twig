@@ -1,0 +1,49 @@
+<section class="compare-table-section" id="{{ section_id }}">
+    <div class="container">
+        <div class="compare-table-wrapper">
+            <h2>{{ title|e('wp_kses_post') }}</h2>
+            <div class="compare-table-responsive">
+                <table class="compare-table" border="0" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th class="compare-table-title" colspan="5">{{ title|e('wp_kses_post') }}</th>
+                        </tr>
+                        <tr>
+                            {% for index, item in table_header %}
+                                {% if index == 0 %}
+                                    <th class="compare-title">{{ item.header_content|e('wp_kses_post') }}</th>
+                                {% else %}
+                                    <th class="compare-val {% if item.blue_bound %} blue-bound {% endif %}">{{ item.header_content|e('wp_kses_post') }}</th>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in table_body %}
+                            <tr>
+                                <td class="compare-title">
+                                    <h3>{{ item.first_col.title|e('wp_kses_post') }}</h3>
+                                    <p>{{ item.first_col.content|e('wp_kses_post') }}</p>
+                                </td>
+                                {% for cols in item.other_cols %}
+                                    <td class="compare-val {% if cols.blue_bound %} blue-bound {% endif %}">
+                                        <div class="compare-val-inner">
+                                            {% if cols.icon_style == 'yes' %}
+                                                <span class="icon-yes"></span>
+                                            {% elseif cols.icon_style == 'no' %}
+                                                <span class="icon-no"></span>
+                                            {% elseif cols.icon_style == 'maybe' %}
+                                                <span class="icon-maybe"></span>
+                                            {% endif %}
+                                            {% if cols.info %}<div class="compare-val-info">{{ cols.info|e('wp_kses_post') }}</div>{% endif %}
+                                        </div>
+                                    </td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
